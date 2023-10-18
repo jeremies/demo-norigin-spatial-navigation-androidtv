@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "armv7",
+            "includePath": [
+                "/home/quim/kepler/kepler-sdk/0.2.6557.0/kndk/platforms/0.2/armv7/usr/include/**",
+                "/home/quim/kepler/kepler-sdk/0.2.6557.0/component-sdks/VegaUIReact/armv7/include/**",
+                "/home/quim/projectes/pruebas-kepler2/demo-norigin-spatial-navigation-androidtv/**"
+            ],
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17"
+        },
+        {
+            "name": "x86_64",
+            "includePath": [
+                "/home/quim/kepler/kepler-sdk/0.2.6557.0/kndk/platforms/0.2/x86_64/usr/include/**",
+                "/home/quim/kepler/kepler-sdk/0.2.6557.0/component-sdks/VegaUIReact/x86_64/include/**",
+                "/home/quim/projectes/pruebas-kepler2/demo-norigin-spatial-navigation-androidtv/**"
+            ],
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17"
+        }
+    ],
+    "version": 4
+}
