@@ -1,17 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useFocusable } from '@noriginmedia/norigin-spatial-navigation';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { useFocusable } from "@noriginmedia/norigin-spatial-navigation";
+import { init } from "@noriginmedia/norigin-spatial-navigation";
+import { useEffect } from "react";
 
-function Button() {
+init({
+  nativeMode: true,
+});
+
+function Button({ autoFocus }) {
   const { ref, focused, focusSelf } = useFocusable();
 
-  return (<TouchableOpacity
-    ref={ref}
-    onFocus={focusSelf}
-    style={focused ? styles.buttonFocused : styles.button}
-  >
-    <Text>Press me</Text>
-  </TouchableOpacity>);
+  useEffect(() => {
+    if (autoFocus) {
+      focusSelf();
+    }
+  }, []);
+
+  return (
+    <TouchableOpacity
+      ref={ref}
+      onFocus={focusSelf}
+      style={focused ? styles.buttonFocused : styles.button}
+    >
+      <Text>Press me</Text>
+    </TouchableOpacity>
+  );
 }
 
 export default function App() {
@@ -19,7 +33,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!asd</Text>
       <StatusBar style="auto" />
-      <Button />
+      <Button autoFocus />
       <Button />
     </View>
   );
@@ -28,16 +42,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonFocused: {
     backgroundColor: "red",
-    marginBottom: 100
+    marginBottom: 100,
   },
   button: {
     backgroundColor: "blue",
-    marginBottom:  100
-  }
+    marginBottom: 100,
+  },
 });
